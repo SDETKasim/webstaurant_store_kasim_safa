@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Webstaurant Project Functionality" verbose="1">
+    <test name="Search By Keyword / Add Last Item and Empty Cart">
+        <packages>
+            <package name="com.webstaurant_project.tests"></package>
+        </packages>
+    </test>
+</suite>
