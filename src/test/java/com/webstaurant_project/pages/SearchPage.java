@@ -34,6 +34,7 @@ public class SearchPage extends BasePage {
     public void clickPageNumber(int pageNumber) {
         Driver.getDriver().findElement(By.xpath("//a[.='" + pageNumber + "']")).click();
     }
+
     /**
      * Created a method that gets page number of last search result page and sets its int value to "totalPages".
      * Then uses the "totalPages" to set loop condition and then loops through each item on each page.
@@ -46,9 +47,11 @@ public class SearchPage extends BasePage {
         for (int pageNumber = 1; pageNumber <= totalPages; ) {
             SoftAssert softAssert = new SoftAssert();
             for (WebElement eachItemInList : pageItemsList) {
+                String redColorCode = "\u001B[31m";
+                String resetColorCode = "\u001B[0m";
                 softAssert.assertTrue(eachItemInList.getText().contains(word));
                 if (!eachItemInList.getText().contains(word)) {
-                    System.out.println("Item# " + eachItemInList.getAttribute("data-item-number").toUpperCase() + " on page " + pageNumber + " does not contain \"" + word + "\".");
+                    System.out.println("Item# " + redColorCode + eachItemInList.getAttribute("data-item-number").toUpperCase() + resetColorCode + " on page " + pageNumber + " does not contain \"" + word + "\".");
                 }
             }
             pageNumber++;
