@@ -16,7 +16,7 @@ public class TC_01_WS_Project extends TestBase {
         searchPage.verifyEachPageItemContains("Table");
     }
     @Test(priority = 2)
-    public void addLastItemAndEmptyCart(){
+    public void addLastItemAndEmptyCart() {
         searchPage.addLastItemToCart();
         searchPage.clickViewCartButton();
         cartPage.assertItemInCartIsSelectedItem();
@@ -24,4 +24,5 @@ public class TC_01_WS_Project extends TestBase {
         cartPage.clickConfirmationEmptyCartButton();
         cartPage.assertYourCartIsEmptyMessageDisplayed();
     }
+
 }

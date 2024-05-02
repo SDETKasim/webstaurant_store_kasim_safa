@@ -1,12 +1,10 @@
 package com.webstaurant_project.pages;
 
 import com.webstaurant_project.utilities.Driver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.asserts.SoftAssert;
-
 import java.util.List;
 
 public class SearchPage extends BasePage {
@@ -76,6 +74,7 @@ public class SearchPage extends BasePage {
     }
 
     public void clickViewCartButton() {
-        viewCartButton.click();
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click()",viewCartButton);
     }
 }

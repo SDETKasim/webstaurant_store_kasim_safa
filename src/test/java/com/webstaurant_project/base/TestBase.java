@@ -26,8 +26,7 @@ public abstract class TestBase {
      * It closes the driver instance.
      */
     @AfterClass
-    public void tearDown() {
-        Driver.closeDriver();
+    public void tearDown() {Driver.closeDriver();
     }
 }
 
